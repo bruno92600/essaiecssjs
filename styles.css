@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
+
+* {
+    transition: all 1s ease-in-out;
+    font-family: "Ysabeau", sans-serif;
+    color: rgb(38, 38, 38);
+    font-weight: 200;
+    font-size: 30px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: stretch;
+}
+
+
+.box {
+    padding: 10px;
+}
+
+.small-box {
+    min-height: 150px;
+    min-width: 250px;
+    flex-grow: 1;
+}
+
+.long-box {
+    min-height: 150px;
+    min-width: 500px;
+    flex-grow: 4;
+}
+
+.large-box {
+    min-height: 500px;
+    min-width: 410px;
+    flex-grow: 2;
+}
+
+.large-box#squish {
+    min-width: 150px !important;
+}
+
+.pill {
+    height: 100%;
+    width: 100%;
+    border: solid 10px rgb(38, 38, 38);
+    box-sizing: border-box;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container {
+    position: relative;
+    min-height: 500px;
+    width: 150px;
+}
+
+.input-container {
+    position: absolute;
+    bottom: 50px;
+    left: 101px;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    z-index: 2;
+}
+
+.slider-container input[type="range"] {
+    -webkit-appearance: none;
+    width: 420px;
+    height: 20px;
+    background-color: rgba(18, 9, 9, 0.6);
+    border-radius: 15px;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to right, blue, pink);
+    border: rgb(20, 20, 170) solid 4px;
+    cursor: grab;
+    z-index: 3;
+}
+
+.x-box {
+    position: relative;
+    min-width: 410px;
+    min-height: 500px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.x-box svg {
+    transform: scale(0.95);
+}
+
+.x-box p {
+    position: absolute;
+    top: 38%;
+    z-index: 10;
+    display: none;
+}
+
+.x-box:hover p {
+    display: block;
+}
+
+.rotating-icon {
+    animation: rotate 10s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0px 12px 12px 0px;
+    padding: 10px;
+}
+
+.left-expand-arrow {
+    margin-right: 70px;
+    animation: bounceLeft 3s infinite;
+}
+
+@keyframes bounceLeft {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0) rotate(135deg);
+    }
+
+    40% {
+        transform: translateX(-40px) rotate(135deg);
+    }
+    60% {
+        transform: translateX(-20px) rotate(135deg);
+    }
+}
+
+.right-expand-arrow {
+    animation: bounceRight 3s infinite;
+}
+
+@keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0) rotate(-45deg);
+    }
+
+    40% {
+        transform: translateX(40px) rotate(-45deg);
+    }
+    60% {
+        transform: translateX(20px) rotate(-45deg);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    max-width: 230px;
+}
+
+.logo-container img {
+    width: 100%;
+}
+
+.hidden-pill {
+    height: 100%;
+    width: 100%;
+    border: solid 12px rgb(38, 38, 38);
+    box-sizing: border-box;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.social-fan {
+    position: relative;
+}
+
+.social-fan .social {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+    z-index: 10;
+}
+
+.social-fan:hover .instagram {
+    display: block;
+    animation: fanInstagram 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fanInstagram {
+    0% {
+        transform: rotate(0deg);
+        right: 0;
+        top: 0;
+    }
+    100% {
+        transform: rotate(-20deg);
+        right: 40px;
+        top: -12px;
+    }
+}
+
+.social-fan:hover .email {
+    display: block;
+    animation: fanEmail 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fanEmail {
+    0% {
+        transform: rotate(0deg);
+        right: 0;
+        top: 0;
+    }
+    100% {
+        transform: rotate(-40deg);
+        right: 100px;
+        top: -16px;
+    }
+}
+
+.social-fan:hover .coding-tips {
+    display: block;
+    animation: fanCodingtips 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fanCodingtips {
+    0% {
+        transform: rotate(0deg);
+        right: 0;
+        top: 0;
+    }
+    100% {
+        transform: rotate(-60deg);
+        right: 130px;
+        top: -20px;
+    }
+}
+
+.stretchable:hover {
+    flex-grow: 5 !important;
+}
+
+#takeover:hover ~ #squish {
+    min-width: 0;
+}
+
+#takeover:hover .arrow-container {
+    display: none;
+}
+
+.large-box:hover {
+    flex-grow: 10 !important;
+}
+
+.large-box:hover .text-box {
+    display: block;
+}
+
+.large-box .text-box {
+    max-width: 300px;
+}
+
+.large-box .text-box p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.large-box .text-box a {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(196, 104, 0);
+}
+
+.small-box.stretchable:hover .hidden {
+    display: block;
+}
+
+.hidden-box {
+    height: auto;
+    width: 0;
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hidden-box .text-box {
+    margin: 30px;
+}
+
+.pulse {
+    transform-origin: center;
+    animation: pulse 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hidden-box a,
+.hidden-box p {
+    font-size:18px;
+}
+
+iframe {
+    width: 100%;
+    min-height: 300px;
+}
+
+.hidden-box a {
+    color: red;
+}
+
+.hidden-pill a {
+    margin: 0 150px 0 0;
+}
+
+.hidden-box ~ .box-container {
+    overflow: hidden;
+}
